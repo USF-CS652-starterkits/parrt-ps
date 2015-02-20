@@ -159,8 +159,9 @@ public class PSInterpreter {
 
 	public PSArray popAsArray(int n) {
 		PSArray a = new PSArray();
+		int ssize = operandStack.size();
 		for (int i = 0; i < n; i++) {
-			a.add(pop());
+			a.add(operandStack.get(ssize-n+i));
 		}
 		return a;
 	}
